@@ -178,6 +178,6 @@ return
 		FindFormat_RemoveFormat(xl)
 return
 
-F15::
-	z := WinExist("Find and Replace")
-	MsgBox, %z%
+;F15::
+;	z := WinExist("Find and Replace")
+;	MsgBox, %z%
