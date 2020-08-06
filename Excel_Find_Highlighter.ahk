@@ -1,4 +1,4 @@
-; Jonathan Hopper
+; orendigo.net
 ; 6/26/2020
 ; Excel Find Highlighter
 
