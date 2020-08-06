@@ -29,6 +29,7 @@ global sheetArray := Array()
 ; Excel_Get() There are a lot of versions of this function floating around, but I ended up using
 ; this one, since some of the others were ending in endless loops when the excel workbook was saved and closed
 ; when the find dialog box was still open.  This one doesn't do that.
+; https://github.com/ahkon/MS-Office-COM-Basics/blob/master/Examples/Excel/Excel_Get.ahk
 Excel_Get(WinTitle:="ahk_class XLMAIN", Excel7#:=1) {
     static h := DllCall("LoadLibrary", "Str", "oleacc", "Ptr")
     WinGetClass, WinClass, %WinTitle%
