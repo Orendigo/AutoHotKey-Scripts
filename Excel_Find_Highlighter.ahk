@@ -155,8 +155,6 @@ return
 	;   since you can close the dialog box when you have the sheet/other
 	;   windows active.
 	else if (WinExist("Find and Replace")) {
-		stdout := FileOpen("*", "w")
-		stdout.WriteLine("test")
 		KeyWait, LButton
 		sleep, 50
 		; need to use Excel_Get here by itself; I was having issues otherwise.
