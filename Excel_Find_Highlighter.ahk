@@ -10,7 +10,6 @@
 
 ; Known Issues:
 ;	1. The highlight will fall behind if you quickly go through the search.
-;	  1a. If you press enter quick enough, sometimes the cursour can end up ahead of the highlight.
 ;	2. In a new sheet, using the find dialog will destroy your undo stack. This is an issue in Excel.
 ;		The same thing will happen if you program a macro within excel to do the same thing.
 ;		This will also happen if you make a new sheet in a workbook where the formatting already exist.
@@ -19,6 +18,7 @@
 ;		dialog box.
 ;	4. This will only work if you're able to edit the worksheet.  You can be in read-only mode, though.
 
+; https://autohotkey.com/board/topic/77303-acc-library-ahk-l-updated-09272012/
 #Include Acc.ahk
 #SingleInstance Force
 
@@ -165,10 +165,11 @@ return
 	}
 return
 
-; Escape key
+; Escape key / !F4
 ~Escape::
 ~!F4::
 	; ensuring the user is in Microsoft Excel
+	WinGet, ProcessTitle, ProcessName, A
 	if !(InStr(ProcessTitle, "EXCEL.EXE") > 0)
 		return
 	
@@ -178,6 +179,3 @@ return
 		FindFormat_RemoveFormat(xl)
 return
 
-;F15::
-;	z := WinExist("Find and Replace")
-;	MsgBox, %z%
